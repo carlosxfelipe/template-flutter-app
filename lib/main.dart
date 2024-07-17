@@ -25,27 +25,27 @@ class MyApp extends StatelessWidget {
       GoRoute(
         path: '/',
         pageBuilder: (context, state) => NoTransitionPage(
-          child: const CustomBottomBar(currentIndex: 0, child: HomeScreen()),
+          child: const ConvexBottomBar(currentIndex: 0, child: HomeScreen()),
         ),
         routes: [
           GoRoute(
             path: 'home',
             pageBuilder: (context, state) => NoTransitionPage(
               child:
-                  const CustomBottomBar(currentIndex: 0, child: HomeScreen()),
+                  const ConvexBottomBar(currentIndex: 0, child: HomeScreen()),
             ),
           ),
           GoRoute(
             path: 'profile',
             pageBuilder: (context, state) => NoTransitionPage(
-              child: const CustomBottomBar(
+              child: const ConvexBottomBar(
                   currentIndex: 1, child: ProfileScreen()),
             ),
           ),
           GoRoute(
             path: 'favorites',
             pageBuilder: (context, state) => NoTransitionPage(
-              child: const CustomBottomBar(
+              child: const ConvexBottomBar(
                   currentIndex: 2, child: FavoritesScreen()),
             ),
           ),
@@ -53,14 +53,14 @@ class MyApp extends StatelessWidget {
             path: 'cart',
             pageBuilder: (context, state) => NoTransitionPage(
               child:
-                  const CustomBottomBar(currentIndex: 3, child: CartScreen()),
+                  const ConvexBottomBar(currentIndex: 3, child: CartScreen()),
             ),
           ),
           GoRoute(
             path: 'store',
             pageBuilder: (context, state) => NoTransitionPage(
               child:
-                  const CustomBottomBar(currentIndex: 4, child: StoreScreen()),
+                  const ConvexBottomBar(currentIndex: 4, child: StoreScreen()),
             ),
           ),
         ],
