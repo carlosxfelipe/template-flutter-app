@@ -49,30 +49,101 @@ class HorizontalCardListState extends State<HorizontalCardList> {
     });
   }
 
-  Color _getColorByType(String type) {
+  // Color _getColorByType(String type) {
+  //   switch (type) {
+  //     case 'fire':
+  //       return Colors.red;
+  //     case 'water':
+  //       return Colors.blue;
+  //     case 'grass':
+  //       return Colors.green;
+  //     case 'electric':
+  //       return Colors.yellow;
+  //     case 'psychic':
+  //       return Colors.purple;
+  //     case 'ice':
+  //       return Colors.lightBlueAccent;
+  //     case 'dragon':
+  //       return Colors.indigo;
+  //     case 'dark':
+  //       return Colors.brown;
+  //     case 'fairy':
+  //       return Colors.pink;
+  //     case 'normal':
+  //       return Colors.grey;
+  //     default:
+  //       return Colors.black;
+  //   }
+  // }
+
+  LinearGradient _getGradientByType(String type) {
     switch (type) {
       case 'fire':
-        return Colors.red;
+        return const LinearGradient(
+          colors: [Colors.red, Colors.orange],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        );
       case 'water':
-        return Colors.blue;
+        return const LinearGradient(
+          colors: [Colors.blue, Colors.lightBlueAccent],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        );
       case 'grass':
-        return Colors.green;
+        return const LinearGradient(
+          colors: [Colors.green, Colors.lightGreen],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        );
       case 'electric':
-        return Colors.yellow;
+        return const LinearGradient(
+          colors: [Colors.yellow, Colors.amber],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        );
       case 'psychic':
-        return Colors.purple;
+        return const LinearGradient(
+          colors: [Colors.purple, Colors.deepPurple],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        );
       case 'ice':
-        return Colors.lightBlueAccent;
+        return const LinearGradient(
+          colors: [Colors.lightBlueAccent, Colors.cyan],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        );
       case 'dragon':
-        return Colors.indigo;
+        return const LinearGradient(
+          colors: [Colors.indigo, Colors.blueAccent],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        );
       case 'dark':
-        return Colors.brown;
+        return const LinearGradient(
+          colors: [Colors.brown, Colors.black],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        );
       case 'fairy':
-        return Colors.pink;
+        return const LinearGradient(
+          colors: [Colors.pink, Colors.pinkAccent],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        );
       case 'normal':
-        return Colors.grey;
+        return const LinearGradient(
+          colors: [Colors.grey, Colors.black38],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        );
       default:
-        return Colors.black;
+        return const LinearGradient(
+          colors: [Colors.black, Colors.black54],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        );
     }
   }
 
@@ -106,7 +177,8 @@ class HorizontalCardListState extends State<HorizontalCardList> {
               child: Container(
                 width: 150,
                 decoration: BoxDecoration(
-                  color: _getColorByType(primaryType),
+                  // color: _getColorByType(primaryType),
+                  gradient: _getGradientByType(primaryType),
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Column(
