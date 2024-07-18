@@ -28,13 +28,13 @@ class HomeScreenState extends State<HomeScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            const SizedBox(height: 16),
+            BannerWidget(),
             const Padding(
               padding: EdgeInsets.all(16.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  BannerWidget(),
-                  SizedBox(height: 16),
                   WelcomeText(),
                   SizedBox(height: 8),
                   DescriptionText(),
@@ -55,31 +55,24 @@ class HomeScreenState extends State<HomeScreen> {
   }
 }
 
-class BannerWidget extends StatelessWidget {
-  const BannerWidget({super.key});
+// class BannerWidget extends StatelessWidget {
+//   const BannerWidget({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 150,
-      width: double.infinity,
-      decoration: BoxDecoration(
-        color: Colors.grey[100],
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: const Center(
-        child: Text(
-          'Banner Temporário',
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       height: 150,
+//       width: double.infinity,
+//       decoration: BoxDecoration(
+//         borderRadius: BorderRadius.circular(10),
+//         image: const DecorationImage(
+//           image: AssetImage('assets/images/pexels-janetrangdoan-1128678.jpg'),
+//           fit: BoxFit.cover,
+//         ),
+//       ),
+//     );
+//   }
+// }
 
 class WelcomeText extends StatelessWidget {
   const WelcomeText({super.key});
