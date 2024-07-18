@@ -11,12 +11,12 @@ class HomeScreen extends StatefulWidget {
 class HomeScreenState extends State<HomeScreen> {
   List<String> items = List.generate(10, (index) => 'Item $index');
 
-  void _loadMoreItems() {
-    setState(() {
-      items
-          .addAll(List.generate(10, (index) => 'Item ${items.length + index}'));
-    });
-  }
+  // void _loadMoreItems() {
+  //   setState(() {
+  //     items
+  //         .addAll(List.generate(10, (index) => 'Item ${items.length + index}'));
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -41,12 +41,13 @@ class HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 16.0),
-              child: HorizontalCardList(
-                items: items,
-                loadMoreItems: _loadMoreItems,
-              ),
+            const Padding(
+              padding: EdgeInsets.only(left: 16.0),
+              // child: HorizontalCardList(
+              //   items: items,
+              //   loadMoreItems: _loadMoreItems,
+              // ),
+              child: HorizontalCardList(),
             ),
           ],
         ),
@@ -99,55 +100,55 @@ class DescriptionText extends StatelessWidget {
   }
 }
 
-class HorizontalCardList extends StatelessWidget {
-  final List<String> items;
-  final VoidCallback loadMoreItems;
+// class HorizontalCardList extends StatelessWidget {
+//   final List<String> items;
+//   final VoidCallback loadMoreItems;
 
-  const HorizontalCardList({
-    required this.items,
-    required this.loadMoreItems,
-    super.key,
-  });
+//   const HorizontalCardList({
+//     required this.items,
+//     required this.loadMoreItems,
+//     super.key,
+//   });
 
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 200,
-      child: NotificationListener<ScrollNotification>(
-        onNotification: (ScrollNotification scrollInfo) {
-          if (scrollInfo.metrics.pixels == scrollInfo.metrics.maxScrollExtent) {
-            loadMoreItems();
-            return true;
-          }
-          return false;
-        },
-        child: ListView.builder(
-          scrollDirection: Axis.horizontal,
-          itemCount: items.length,
-          itemBuilder: (context, index) {
-            return Padding(
-              padding: const EdgeInsets.only(right: 8.0),
-              child: Container(
-                width: 150,
-                decoration: BoxDecoration(
-                  color: Colors.grey.shade100,
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: Center(
-                  child: Text(
-                    items[index],
-                    style: const TextStyle(
-                      color: Colors.black,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-              ),
-            );
-          },
-        ),
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return SizedBox(
+//       height: 200,
+//       child: NotificationListener<ScrollNotification>(
+//         onNotification: (ScrollNotification scrollInfo) {
+//           if (scrollInfo.metrics.pixels == scrollInfo.metrics.maxScrollExtent) {
+//             loadMoreItems();
+//             return true;
+//           }
+//           return false;
+//         },
+//         child: ListView.builder(
+//           scrollDirection: Axis.horizontal,
+//           itemCount: items.length,
+//           itemBuilder: (context, index) {
+//             return Padding(
+//               padding: const EdgeInsets.only(right: 8.0),
+//               child: Container(
+//                 width: 150,
+//                 decoration: BoxDecoration(
+//                   color: Colors.grey.shade100,
+//                   borderRadius: BorderRadius.circular(10),
+//                 ),
+//                 child: Center(
+//                   child: Text(
+//                     items[index],
+//                     style: const TextStyle(
+//                       color: Colors.black,
+//                       fontSize: 20,
+//                       fontWeight: FontWeight.bold,
+//                     ),
+//                   ),
+//                 ),
+//               ),
+//             );
+//           },
+//         ),
+//       ),
+//     );
+//   }
+// }
